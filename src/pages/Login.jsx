@@ -28,7 +28,7 @@ function Login() {
             </section>
 
             {/* Features Section */}
-            {/* <section className="features">
+            <section className="features">
                 <h2>Why Choose Us?</h2>
                 <div className="feature-cards">
                     <div className="feature-card">
@@ -44,7 +44,7 @@ function Login() {
                         <p>100% safe and hassle-free transactions.</p>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
             {/* Footer */}
             <footer className="footer">
