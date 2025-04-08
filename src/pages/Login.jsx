@@ -10,7 +10,7 @@ function Login() {
         <div className="homepage">
             <header className="header">  
             <div className="logo-container">
-                <img src={logo} alt="ReactFood Logo" className="logo" />
+                <img src={logo} alt="Foodiee Logo" className="logo" />
                 </div>
                 <div className="header-links">
                 <span className="app-text">Get the App</span> 
@@ -20,7 +20,7 @@ function Login() {
             </header>
             {/* Hero Section */}
             <section className="hero">
-                <h1>Welcome to <span>ReactFood</span></h1>
+                <h1>Welcome to <span>Foodiee</span></h1>
                 <p>Discover delicious meals & order with ease!</p>
                 <button onClick={() => navigate("/main")} className="menu-button">
                     Go to Menu 🍽️
@@ -48,7 +48,7 @@ function Login() {
 
             {/* Footer */}
             <footer className="footer">
-                <p>&copy; 2025 ReactFood | All Rights Reserved</p>
+                <p>&copy; 2025 Foodiee | All Rights Reserved</p>
             </footer>
         </div>
     );
