@@ -1,4 +1,3 @@
-
 import { useState, useContext } from "react";
 import Modal from "./UI/Modal.jsx";
 import CartContext from "../store/CartContext.jsx";
@@ -73,6 +72,8 @@ export default function Checkout() {
     // Close checkout modal first
     userProgressCtx.hideCheckout();
     setShowDotsLoader(true);
+    
+    
     // Send order request
     sendRequest(
       JSON.stringify({
@@ -93,12 +94,21 @@ export default function Checkout() {
     setTimeout(() => {
       setShowDotsLoader(false);
       setShowSuccessPopup(true);
-    }, 1000);
+    }, 10000);
   }
   
   return (
     <>
-      {showDotsLoader && <DotsLoader message="Confirming your order..." />}
+      {/* {showDotsLoader && <DotsLoader message="Confirming your order..." />} */}
+      {showDotsLoader && (
+      <DotsLoader
+          message="Confirming your order..."
+          onVerified={() => {
+            setShowDotsLoader(false);
+            setShowSuccessPopup(true);
+          }}
+        />
+      )}
       {/* ✅ Success Popup */}
       {showSuccessPopup && (
         <CartPopup 
