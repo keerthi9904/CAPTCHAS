@@ -20,7 +20,7 @@ export default function LoginPage() {
     }else if(!(validateCaptcha(user_captcha_value) === true)){
         alert('Invalid Captcha, please try again.')
     }else{
-        navigate('/main', { state: { role } });
+        navigate('/loading_main', { state: { role } });
     }
   };
 

@@ -1,6 +1,5 @@
 import logo from "../../public/logo.jpg"
 import "./cloading.css"; 
-import "./LandingPage.css";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
