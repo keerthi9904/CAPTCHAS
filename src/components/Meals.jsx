@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MealItem from "./MealItem.jsx";
 import useHttp from "../hooks/useHttp.js";
 import Error from "./Error.jsx";
+import EmojiParade from "../pages/EmojiParade.jsx";
 
 const requestConfig = {};
 
@@ -23,6 +25,16 @@ export default function Meals() {
     []
   );
 
+  const [showLoader, setShowLoader] = useState(false);
+  const navigate = useNavigate();
+
+  function handleCategoryClick(category) {
+    setShowLoader(true);
+    setTimeout(() => {
+      navigate(`/main/category/${category}`);
+    }, 1000); // delay for loader effect
+  }
+
   if (isLoading) {
     return <p className="center">Fetching meals...</p>;
   }
@@ -33,11 +45,12 @@ export default function Meals() {
 
   return (
     <div>
+      {showLoader && <EmojiParade />}
       <div className="category-container">
         {categories.map((category) => (
-          <Link key={category} to={`/main/category/${category}`} className="category-tile">
+          <button key={category} className="category-tile" onClick={() => handleCategoryClick(category)}>
             {category}
-          </Link>
+          </button>
         ))}
       </div>
 
