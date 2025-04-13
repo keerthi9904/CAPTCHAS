@@ -1,1 +1,4 @@
 node_modules/
+backend/orders.json
+package.json
+package-lock.json
