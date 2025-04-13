@@ -9,6 +9,10 @@ function LandingPage() {
     const handleLoginClick = () => {
         navigate("/loading");
     };
+
+    const handleSignUp = () => {
+        navigate("/linear_load")
+    };
     
     return (
         <div className="homepage">
@@ -18,7 +22,7 @@ function LandingPage() {
                 </div>
                 <div className="header-links">
                 <span className="app-text">Get the App</span> 
-                <Button textOnly onClick={handleLoginClick}>Sign Up</Button>
+                <Button textOnly onClick={handleSignUp}>Sign Up</Button>
                 <Button textOnly onClick={handleLoginClick}>Login</Button>
             </div>
             </header>

@@ -7,6 +7,7 @@ import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import CLoader from "./pages/CLoader"; 
 import { FancyLoader } from "./pages/fancy_loader";
+import LinearLoader from "./pages/LinearLoader";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/loading" element={<CLoader />} />
+          <Route path="/linear_load" element={<LinearLoader />} />
           <Route path="/LoginPage" element={<LoginPage/>}/>
           <Route path="/loading_main" element={<FancyLoader/>}/>
           {/* Layout wraps Mainpage and CategoryMeals */}
