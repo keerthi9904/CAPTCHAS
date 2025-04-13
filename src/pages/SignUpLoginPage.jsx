@@ -1,41 +1,32 @@
-// LoginPage.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import './LoginPage.css'; // Import the CSS
-import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
+import MathCaptcha from "./captchas/MathCaptcha";
+import Button from '../components/UI/Button';
 
-export default function LoginPage() {
-  const [role, setRole] = useState('student');
+export default function SignUpLoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    let user_captcha_value = document.getElementById('user_captcha_input').value;
     if (!email || !password) {
       alert('Please fill in all required fields.');
       return;
-    }else if(!(validateCaptcha(user_captcha_value) === true)){
-        alert('Invalid Captcha, please try again.')
-    }else{
-        navigate('/loading_main', { state: { role } });
     }
-  };
-
-  useEffect(() => {
-    loadCaptchaEnginge(6); // 6 is the number of characters in CAPTCHA
-    }, []);
-
-const doSubmit = () => {
-    let user_captcha_value = document.getElementById('user_captcha_input').value;
-    if (validateCaptcha(user_captcha_value) === true) {
-        alert('Captcha Matched');
-    } else {
-        alert('Captcha Does Not Match');
+  
+    if (!isCaptchaVerified) {
+      alert('Please solve the captcha first.');
+      return;
     }
-};
+  
+    // Remove or fix 'role' usage here
+    navigate('/loading_main'); // ✅ FIXED LINE
+  };  
+
 
   return (
     <div className="login-container">
@@ -78,12 +69,11 @@ const doSubmit = () => {
           )}
         </div>
 
-        <div className='captcha-input'>
-            <LoadCanvasTemplate />
-            <input type="text" id="user_captcha_input" name="user_captcha_input" />
-        </div>
+        {/* Insert captcha here  */}
+        <MathCaptcha onVerified={setIsCaptchaVerified} />
 
-        <button onClick={handleLogin} className="login-button">
+
+        <button disabled={!isCaptchaVerified} onClick={handleLogin} className="login-button">
           Continue
         </button>
 

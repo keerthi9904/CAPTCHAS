@@ -170,3 +170,10 @@
     background-color: #d1d5db;
   }
   
+
+  input[type="number"] {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  

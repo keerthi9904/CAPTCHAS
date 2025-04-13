@@ -18,7 +18,7 @@ function LinearLoader() {
     }, 10);
 
     const timeout = setTimeout(() => {
-      navigate("/LoginPage"); // Navigate after loading completes
+      navigate("/SignUpPage"); // Navigate after loading completes
     }, 1000);
 
     return () => {
