@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import { CartContextProvider } from "./store/CartContext";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
+import CLoader from "./pages/CLoader"; 
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/loading" element={<CLoader />} />
           <Route path="/LoginPage" element={<LoginPage/>}/>
           
           {/* Layout wraps Mainpage and CategoryMeals */}

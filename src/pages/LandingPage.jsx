@@ -6,6 +6,10 @@ import Button from "../components/UI/Button.jsx"
 function LandingPage() {
     const navigate = useNavigate();
 
+    const handleLoginClick = () => {
+        navigate("/loading");
+    };
+    
     return (
         <div className="homepage">
             <header className="header">
@@ -14,15 +18,15 @@ function LandingPage() {
                 </div>
                 <div className="header-links">
                 <span className="app-text">Get the App</span> 
-                <Button textOnly onClick={()=>navigate("/LoginPage")}>Sign Up</Button>
-                <Button textOnly onClick={()=>navigate("/LoginPage")}>Login</Button>
+                <Button textOnly onClick={handleLoginClick}>Sign Up</Button>
+                <Button textOnly onClick={handleLoginClick}>Login</Button>
             </div>
             </header>
             {/* Hero Section */}
             <section className="hero">
                 <h1>Welcome to <span>Foodiee</span></h1>
                 <p>Discover delicious meals & order with ease!</p>
-                <button onClick={() => navigate("/LoginPage")} className="menu-button">
+                <button onClick={handleLoginClick} className="menu-button">
                     Login Here
                 </button>
             </section>
