@@ -4,7 +4,6 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import './LoginPage.css'; // Import the CSS
 import MathCaptcha from "./captchas/MathCaptcha";
-import Button from '../components/UI/Button';
 
 export default function SignUpLoginPage() {
   const [email, setEmail] = useState('');
