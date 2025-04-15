@@ -189,8 +189,19 @@ export default function Checkout() {
             <div className="step4">
               <h2>Confirm Order</h2>
               <p>Please review your order before submitting.</p>
-              <Button onClick={() => setStep(3)} style={{ marginRight: "310px" }}>Back</Button>
-              <Button onClick={handleSubmit}>Submit Order</Button>
+              
+              <div className="shipping-confirmation-wrapper">
+                <label className="shipping-confirmation">
+                  <input type="checkbox" required className="shipping-checkbox" />
+                  <span>I confirm this is the correct shipping address</span>
+                </label>
+
+                <div className="shipping-buttons">
+                  <button type="button" className="back-btn">Back</button>
+                  <button type="submit" className="submit-btn">Submit Order</button>
+                </div>
+              </div>
+
             </div>
           )}
 

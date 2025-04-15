@@ -30,6 +30,7 @@ function LandingPage() {
             <section className="hero">
                 <h1>Welcome to <span>Foodiee</span></h1>
                 <p>Discover delicious meals & order with ease!</p>
+                <p>🍽️ Join our foodie family – your taste matters here!</p>
                 <button onClick={handleLoginClick} className="menu-button">
                     Login Here
                 </button>
