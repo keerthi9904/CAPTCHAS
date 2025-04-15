@@ -35,7 +35,7 @@ function ScarcitySidebar() {
       <p className="scarcity-text">Hurry up! <br/>Only a few left in stock!</p>
 
       <div className="scarcity-footer">
-        <p><strong>{orderCount.toLocaleString()}</strong> people ordered delicious meals from <strong>FOODIE</strong>. <br/> Try now!</p>
+        <p><strong>{orderCount.toLocaleString()}</strong> people ordered delicious meals from <strong>FOODIE</strong> today. <br/> Try now!</p>
       </div>
     </div>
   );

@@ -55,15 +55,14 @@ h1 {
 }
 
 #meals {
-  width: 90%;
+  width: 100%;
   max-width: 90rem;
   list-style: none;
   margin: 2rem auto;
-  padding: 1rem;
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 20rem));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 15rem));
   gap: 1rem;
+  justify-content: center;
 }
 
 .meal-item {
