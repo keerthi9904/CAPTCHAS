@@ -25,6 +25,7 @@ export default function Checkout() {
   const [showDotsLoader, setShowDotsLoader] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [showCaptchaModal, setShowCaptchaModal] = useState(false);
+  
 
   const [formData, setFormData] = useState({
     name: "",
@@ -115,12 +116,14 @@ export default function Checkout() {
       {showDotsLoader && (
         <DotsLoader
           message="Confirming your order..."
-          onVerified={() => {
+          onVerified={() => {}}  // No need to use this
+          onReciprocityClosed={() => {
             setShowDotsLoader(false);
             setShowSuccessPopup(true);
           }}
         />
       )}
+
 
       {showSuccessPopup && (
         <CartPopup
@@ -177,6 +180,7 @@ export default function Checkout() {
               <Button onClick={() => {setStep(4);
                                       // Show CAPTCHA modal instead of submitting immediately
                                       setShowCaptchaModal(true);
+
               }}>Pay Now</Button>
             </div>
           )}
