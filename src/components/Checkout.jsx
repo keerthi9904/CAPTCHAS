@@ -198,7 +198,7 @@ export default function Checkout() {
 
                 <div className="shipping-buttons">
                   <button type="button" className="back-btn">Back</button>
-                  <button type="submit" className="submit-btn">Submit Order</button>
+                  <button type="submit" className="submit-btn" onClick={handleSubmit}>Submit Order</button>
                 </div>
               </div>
 
